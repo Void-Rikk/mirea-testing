@@ -1,5 +1,6 @@
 from models import Task, TaskStatus
 from storage import TaskStorage
+from typing import Optional
 
 
 class TaskManager:
@@ -50,8 +51,8 @@ class TaskManager:
     def update_task(
         self,
         task_id: int,
-        title: str | None = None,
-        description: str | None = None
+        title: Optional[str] = None,
+        description: Optional[str] = None
     ) -> Task:
         task = self.get_task(task_id)
 
